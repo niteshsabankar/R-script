@@ -6,6 +6,40 @@ library("Hmisc")
 library("WGCNA")
 library("sva")
 
+ehux <- read.table("/home/nitesh/my_folder/test8/ehux-original", header=TRUE, row.names = 1, sep="\t")
+geph  <- read.table("/home/nitesh/my_folder/test8/geph-original", header=TRUE, row.names = 1, sep="\t")
+csv  <- read.table("/home/nitesh/my_folder/test8/Ehux_JGI_match_GCA_95.csv", header=TRUE, sep=",")
+
+ehux <- ehux[, -c(1, 4, 7, 10)]     # Remove sample 1, 4, 7, 10
+geph <- geph[, -c(1, 4, 7, 10)]
+
+isexpr <- rowSums(ehux > 10) >= 2     # Remove row with all zeros
+ehux <- ehux[isexpr, ]
+isexpr <- rowSums(geph > 10) >= 2
+geph <- geph[isexpr, ]
+
+new <- data.frame(csv, ehux[match(csv$ehux_ID, row.names(ehux)), ])   # add all columns of ehux to csv and create 'new' matrix
+new <- data.frame(new, geph[match(csv$geph_ID, row.names(geph)), ])
+
+new$ehux_ID <- NULL       # Remove unneccesary columns
+new$geph_ID <- NULL
+new$match <- NULL
+
+new <- na.omit(new)
+
+new <- new[,-9]           # To remove GO with omm and no spike
+
+#Normalization
+samples <- data.frame(samples = c("X0.217.2", "X0.217.3", "X0S.217.2", "X0S.217.3", "X9.217.2", "X9.217.3", "X9S.217.2", "X9S.217.3", "X0.GO.3", "X0S.GO.2", "X0S.GO.3", "X9.GO.2", "X9.GO.3", "X9S.GO.2", "X9S.GO.3"))
+
+ds <- DESeqDataSetFromMatrix(countData=new, colData=samples, design=~samples)  # Creating a DESeqDataSet object
+colnames(ds) <- colnames(new)
+dds <- estimateSizeFactors(ds)
+log.norm.counts <- log2(counts(dds, normalized=TRUE) + 1)
+rs <- rowSums(counts(dds))
+normalized <- log.norm.counts[rs > 0,]
+
+--------------------------------------------------------------------------------
 
 datExprA1 <- read.csv("ehux-normalized", header=TRUE, row.names = 1)
 datExprA2 <- read.csv("geph-normalized", header=TRUE, row.names = 1)
