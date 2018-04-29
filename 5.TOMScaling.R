@@ -22,7 +22,6 @@ TOMA2 = TOMA2^scalePowers[2];
 for (set in 1:2)
 scaledTOMSamples[[set]] = TOMScalingSamples[[set]]^scalePowers[set]
 
-
 scaledTOMSamples = list();
 pdf(file = "TOMScaling-QQPlot.pdf", wi = 6, he = 6);
 qqUnscaled = qqplot(TOMScalingSamples[[1]], TOMScalingSamples[[2]], plot.it = TRUE, cex = 0.6,
