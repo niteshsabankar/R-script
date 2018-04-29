@@ -5,7 +5,6 @@ library("flashClust")
 library("Hmisc")
 library("WGCNA")
 
-
 datExprA1 <- read.table("geph-original", header=TRUE, row.names = 1, sep="\t")
 datExprA2 <- read.table("ehux-original", header=TRUE, row.names = 1, sep="\t")
 
