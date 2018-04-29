@@ -1,0 +1,86 @@
+ID	Description
+522053	ER-type CA2+ ATPase 2
+416800	Ca2+/H+ exchanger (CAX3) (CAX family)
+415715	Ca2+/H+ exchanger (CAX4) (CAX family)
+448526	four domain voltage-gated Ca2+ channels
+448907	four domain voltage-gated Ca2+channels
+66584	cation/H+ exchanger (CAX family)
+72273	cation/H+ exchanger (CAX family)
+103021	cation/H+ exchanger (CAX family)
+223499	cation/H+ exchanger (CAX family)
+315097	cation/H+ exchanger (CAX family)
+203920	cation/Ca2+exchanger
+449053	cation/Ca2+exchanger
+62350	calcium pump
+101130	calcium pump
+426283	calcium pump
+466567	calcium pump
+205210	K+-dependent Na+/Ca2+ exchanger (NCKX1; NCKX family)
+447939	K+-dependent Na+/Ca2+ exchanger (NCKX2; NCKX family)
+454623	potassium-independent sodium/calcium exchanger
+107737	Ca2+/Mg2+-permeable cation channels transient receptor potential
+449985	Ca2+/Mg2+-permeable cation channels transient receptor potential
+455760	Ca2+/Mg2+-permeable cation channels transient receptor potential
+468587	Ca2+/Mg2+-permeable cation channels transient receptor potential
+460292	Ca2+/Mg2+-permeable cation channels (LTRPC family)
+118025	fibrillins and related proteins containing Ca2+-binding EGF-like domains
+463266	fibrillins and related proteins containing Ca2+-binding EGF-like domains
+431830	GPA (glutamic acid, proline and alanine) unknown, calcium binding
+356859	carbonic anhydrase, carbon utilization
+56989	carbonic anhydrase, putative
+233460	carbonic anhydrase, alpha
+62679	carbonic anhydrase, alpha
+437452	carbonic anhydrase, alpha
+456048	carbonic anhydrase, alpha
+558406	carbonic anhydrase, alpha
+115240	carbonic anhydrase, beta
+233823	carbonic anhydrase, beta
+239690	carbonic anhydrase, beta
+469462	carbonic anhydrase, beta
+195575	carbonic anhydrase, delta
+222602	carbonic anhydrase, delta
+227360	carbonic anhydrase, delta
+229394	carbonic anhydrase, delta
+241514	carbonic anhydrase, delta
+436031	carbonic anhydrase, delta
+373149	carbonic anhydrase, gamma
+63173	carbonic anhydrase, gamma
+74995	carbonic anhydrase, gamma
+432493	carbonic anhydrase, gamma
+214705	carbonic anhydrase, gamma
+120259	bicarbonate transporter, Na+-independent Cl-/HCO3- exchanger AE1
+200137	bicarbonate transporter
+469783	bicarbonate transporter
+198643	anion exchanger-like (AEL1), SLC4 family of solute carrier proteins
+450694	bicarbonate transporter
+196760	bicarbonate transporter, anion exchanger-like Cl-/HCO3- exchangers
+99943	anion exchanger-like, SLC4 Na+ independent Cl-/HCO3- exchangers
+436956	anion exchanger-like, SLC4 Na+ independent Cl-/HCO3- exchangers
+466232	anion exchanger-like, SLC4 Na+ independent Cl-/HCO3- exchangers
+359783	subunit of Vo sector of a vacuolar H+-ATPase
+447659	bacterial Na+/H+ exchanger
+67081	plasma membrane type H pump/ATPase (PM H+ ATPase)
+439538	V-ATPase, A
+464767	V-ATPase, A
+435128	V-ATPase, B
+313800	V-ATPase, C
+558234	V-ATPase, C
+413949	V-ATPase, D
+420005	V-ATPase, D
+433060	V-ATPase, E
+352209	V-ATPase, F
+369392	V-ATPase, G
+196090	eukaryotic Na+/H+ exchanger
+434034	eukaryotic Na+/H+ exchanger
+464223	eukaryotic Na+/H+ exchanger
+465194	eukaryotic Na+/H+ exchanger
+467182	eukaryotic Na+/H+ exchanger
+105293	bacterial Na+/H+ exchanger
+219535	bacterial Na+/H+ exchanger
+521936	bacterial Na+/H+ exchanger
+76123	p-type ATPase (PM H+ ATPase)
+415047	H+ PPase
+439740	H+ PPase
+631975	voltage-gated H+ channel
+75635	aquaporin
+457738	low CO2-induced gene
