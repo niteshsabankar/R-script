@@ -51,3 +51,39 @@ labeledHeatmap(Matrix= moduleTraitCorA2,
             zlim= c(-1,1),
             main= paste("E. huxleyi Module-trait relationships"))
 dev.off()
+
+# Combined HeatMap
+
+# Initialize matrices to hold the consensus correlation and p-value
+consensusCor = matrix(NA, nrow(moduleTraitCorA1), ncol(moduleTraitCorA1));
+consensusPvalue = matrix(NA, nrow(moduleTraitCorA1), ncol(moduleTraitCorA1));
+
+# Find consensus negative correlations
+negative = moduleTraitCorA1 < 0 & moduleTraitCorA2 < 0;
+consensusCor[negative] = pmax(moduleTraitCorA1[negative], moduleTraitCorA2[negative]);
+consensusPvalue[negative] = pmax(moduleTraitPvalueA1[negative], moduleTraitPvalueA2[negative]);
+
+# Find consensus positive correlations
+positive = moduleTraitCorA1 > 0 & moduleTraitCorA2 > 0;
+consensusCor[positive] = pmin(moduleTraitCorA1[positive], moduleTraitCorA2[positive]);
+consensusPvalue[positive] = pmax(moduleTraitPvalueA1[positive], moduleTraitPvalueA2[positive]);
+
+textMatrix = paste(signif(consensusCor, 2), "\n(", signif(consensusPvalue, 1), ")", sep = "");
+dim(textMatrix) = dim(moduleTraitCorA2)
+
+pdf("heatmapA1-A2.pdf",height=6,width=10)
+par(mar=c(5,9,4,1)+.1)
+
+labeledHeatmap(Matrix= consensusCor,
+            xLabels= names(datTraits),
+            yLabels= names(ME_1A_preserved),
+            ySymbols= names(ME_1A_preserved),
+            colorLabels= FALSE,
+            colors= blueWhiteRed(50),
+            textMatrix= textMatrix,
+            setStdMargins= FALSE, 
+	    cex.text= 1,
+       	    zlim= c(-1,1),
+	    main= paste("G. Oceanica - E. huxleyi Module-trait relationships"))
+
+dev.off()
