@@ -1,9 +1,6 @@
-library("impute")
-library("dynamicTreeCut")
-library("qvalue")
 library("flashClust")
-library("Hmisc")
 library("WGCNA")
+library("DESeq2")
 
 datExprA1 <- read.table("geph-original", header=TRUE, row.names = 1, sep="\t")
 datExprA2 <- read.table("ehux-original", header=TRUE, row.names = 1, sep="\t")
