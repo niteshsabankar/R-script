@@ -1,3 +1,6 @@
+# datExprA1 <- read.csv("geph-normalized", header=TRUE, row.names =1)    # In case you have not followed 1st R script
+# datExprA2 <- read.csv("ehux-normalized", header=TRUE, row.names =1)
+
 commonProbes = intersect(rownames(datExprA1),rownames(datExprA2)) 
 
 softPower = 18
