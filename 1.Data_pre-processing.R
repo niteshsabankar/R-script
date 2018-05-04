@@ -29,8 +29,16 @@ datExprA2 <- new[, c(9:16)]
 
 #Normalization
 samples <- data.frame(samples = colnames(datExprA1))
-ds <- DESeqDataSetFromMatrix(countData=new, colData=samples, design=~samples)  # Creating a DESeqDataSet object
-colnames(ds) <- colnames(new)
+ds <- DESeqDataSetFromMatrix(countData=datExprA1, colData=samples, design=~samples)  # Creating a DESeqDataSet object
+colnames(ds) <- colnames(datExprA1)
+dds <- estimateSizeFactors(ds)
+log.norm.counts <- log2(counts(dds, normalized=TRUE) + 1)
+rs <- rowSums(counts(dds))
+datExprA1 <- log.norm.counts[rs > 0,]
+
+samples <- data.frame(samples = colnames(datExprA2))
+ds <- DESeqDataSetFromMatrix(countData=datExprA2, colData=samples, design=~samples)  # Creating a DESeqDataSet object
+colnames(ds) <- colnames(datExprA2)
 dds <- estimateSizeFactors(ds)
 log.norm.counts <- log2(counts(dds, normalized=TRUE) + 1)
 rs <- rowSums(counts(dds))
