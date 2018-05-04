@@ -42,7 +42,7 @@ colnames(ds) <- colnames(datExprA2)
 dds <- estimateSizeFactors(ds)
 log.norm.counts <- log2(counts(dds, normalized=TRUE) + 1)
 rs <- rowSums(counts(dds))
-datExprA1 <- log.norm.counts[rs > 0,]
+datExprA2 <- log.norm.counts[rs > 0,]
 
 # Write Normalized data sets to files.
 write.csv(datExprA1, file="geph-normalized")
