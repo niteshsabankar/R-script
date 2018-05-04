@@ -19,10 +19,10 @@ scaleQuant[2] = quantile(TOMScalingSamples[[2]], probs = scaleP, type = 8);
 scalePowers[2] = log(scaleQuant[1])/log(scaleQuant[2]);
 TOMA2 = TOMA2^scalePowers[2];
 
+scaledTOMSamples = list();
 for (set in 1:2)
 scaledTOMSamples[[set]] = TOMScalingSamples[[set]]^scalePowers[set]
 
-scaledTOMSamples = list();
 pdf(file = "TOMScaling-QQPlot.pdf", wi = 6, he = 6);
 qqUnscaled = qqplot(TOMScalingSamples[[1]], TOMScalingSamples[[2]], plot.it = TRUE, cex = 0.6,
 xlab = paste("TOM in", setLabels[1]), ylab = paste("TOM in", setLabels[2]), main = "Q-Q plot of TOM", pch = 20)
