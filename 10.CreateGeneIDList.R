@@ -1,6 +1,12 @@
 # Variable Clist contains 10 highly preserved modules
 # Requires A1 and A2 directories already presernt in 'present working directory'
 
+modulesA1 <- datExprA1g
+modulesA1$module <- moduleColors
+
+modulesA2 <- datExprA2g
+modulesA2$module <- moduleColors
+
 clist <- c("blue", "darkred", "saddlebrown", "darkorange", "red", "brown", "violet", "royalblue", "black", "green")
 for (i in clist) {
 	
