@@ -18,6 +18,8 @@ datExprA2 <- datExprA2[isexpr, ]
 new <- data.frame(csv, datExprA1[match(csv$geph_ID, row.names(datExprA1)), ])   # add all columns of geph to csv and create 'new' matrix
 new <- data.frame(new, datExprA2[match(csv$ehux_ID, row.names(datExprA2)), ])
 
+rownames(new) <- new$ehux_ID
+
 new$ehux_ID <- NULL       # Remove unneccesary columns
 new$geph_ID <- NULL
 new$match <- NULL
