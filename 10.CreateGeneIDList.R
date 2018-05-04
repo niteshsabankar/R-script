@@ -7,7 +7,7 @@ modulesA1$module <- moduleColors
 modulesA2 <- datExprA2g
 modulesA2$module <- moduleColors
 
-clist <- c("blue", "darkred", "saddlebrown", "darkorange", "red", "brown", "violet", "royalblue", "black", "green")
+clist <- c("blue", "darkred", "saddlebrown", "darkorange", "red", "brown", "violet", "royalblue", "black", "green")	# subject to change
 for (i in clist) {
 	
    i <- noquote(i)
