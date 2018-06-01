@@ -39,3 +39,11 @@ pdf(file = paste0(outputDir, "lipidGraph.pdf"),height=8,width=10)
 par(mar=c(5, 7, 2, 2))
 barplot(lipid$genes, main="lipid genes", xlab="No. of Genes", xlim=c(0,20), names.arg=lipid$moduleColors, horiz=TRUE, las=1)
 dev.off()
+
+-------------------------
+
+ordering biominer gene modules according to presevation
+
+zz <- stats2[order(-stats2[,2]),c(1:2)] 
+zz <- biominer[order(match(biominer$moduleColors, rownames(zz))), ]
+
