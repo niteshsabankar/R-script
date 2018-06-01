@@ -42,8 +42,13 @@ dev.off()
 
 -------------------------
 
-ordering biominer gene modules according to presevation
+# ordering biominer gene modules according to presevation
 
 zz <- stats2[order(-stats2[,2]),c(1:2)] 
 zz <- biominer[order(match(biominer$moduleColors, rownames(zz))), ]
+zz <- zz[seq(dim(zz)[1],1),]
+pdf(file = paste0(outputDir, "biominerGraph.pdf"),height=8,width=10)
+par(mar=c(5, 7, 2, 2))
+barplot(zz$genes, main="Biomineralization genes", xlab="No. of Genes", names.arg=zz$moduleColors, horiz=TRUE, las=1)
+dev.off()
 
