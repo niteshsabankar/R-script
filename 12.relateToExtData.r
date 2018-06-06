@@ -1,5 +1,6 @@
 biominer <- read.table("data/biominer_genes.txt", sep = '\t', header = TRUE)
 lipid <- read.table("data/Ehux-Lipid-Metabolism.csv", header = TRUE, sep = ',')
+lipid <- lipid[!duplicated(lipid[, "ID"]), ]
 
 biominerA1 <- as.data.frame(datExprA1)
 biominerA1$module <- moduleColors
